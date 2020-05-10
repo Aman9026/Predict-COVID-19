@@ -26,7 +26,7 @@ def send_mail(sender_mail,sender_pass,recipient_mail,message):
 
     server.sendmail(sender_mail,recipient_mail,message) 
 
-    smtpserver.quit() 
+    server.quit() 
     
     
 # function to get result
@@ -39,14 +39,14 @@ def get_result(img):
 
 
 # load model
-model = load_model('model_covid19.h5')
+model = load_model('model_Covid19.h5')
 
 # get csv_file name
 csv_file = sys.argv[1];
 
 data = pd.read_csv(csv_file)
 
-size = data['Upload PA view of chest\'s x-ray image'].shape[0]
+size = data['Upload'].shape[0]
 
 # path where the images will be store after downloading
 dir_path = sys.argv[2]
@@ -59,7 +59,7 @@ file_path = dir_path+'\images/'
 
 # get the images download from each link
 for i in range(size):
-    ID = data['Upload PA view of chest\'s x-ray image'].iloc[i].split('=')[-1]
+    ID = data['Upload'].iloc[i].split('=')[-1]
     file_name = data['Email Address'].iloc[i]
     url_to_jpg(ID,file_path,file_name)
     
@@ -67,7 +67,7 @@ for i in range(size):
 load_images = os.listdir(file_path)
 
 # dict to represent the disease
-res = {1:'NORMAL', 0:'COVID Positive'}
+res = {1:'Disclaimer: Visit our nearest hospital if you have any symptoms, This test is only for research purpose and should not be used for diagnosis. According to our test the result is NORMAL but precautionary measures must be taken. Contact Central Helpline Number for corona-virus: - +91-11-23978046', 0:'Disclaimer: Visit our nearest hospital if you have any symptoms, This test is only for research purpose and should not be used for diagnosis. According to our test the result is COVID Positive and precautionary measures must be taken. Contact Central Helpline Number for corona-virus: - +91-11-23978046'}
     
 # sender email id
 sender_mail = sys.argv[3]
@@ -81,7 +81,7 @@ for img in load_images:
     recipient_mail = img.split('.jpg')[0]
     message = res[out]
     print('{}\t{}'.format(recipient_mail,message))
-    #send_mail(sender_mail,sender_pass,recipient_mail,message):
+    send_mail(sender_mail,sender_pass,recipient_mail,message)
 
 # remove the image dir
 #shutil.rmtree(path+'\images')
