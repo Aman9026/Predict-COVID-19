@@ -21,7 +21,7 @@ The primary source of data for:
 
 ![](https://github.com/Aman9026/COVID-19-Predictor-dataset/blob/master/dataset/Comparision.jpeg)
 
----
+
 
 ![Accuracy](https://github.com/Aman9026/Predict-COVID-19/blob/master/Data/Images/Accuracy.png)
 ![heatmap](https://github.com/Aman9026/Predict-COVID-19/blob/master/Data/Images/heatmap.png)
