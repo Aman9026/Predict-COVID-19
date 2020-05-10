@@ -2,6 +2,8 @@
 
 ![index](https://github.com/Aman9026/Predict-COVID-19/blob/master/Data/Images/indexImage.png)
 
+***You are always welcome to add more or optimize any code in this repository by following [these](https://github.com/Aman9026/Predict-COVID-19/blob/master/CONTRIBUTING.md) instructions.***
+
 ### Why X-Rays?
 
 Since reverse transcription polymerase chain reaction (RT-PCR) test kits are in limited supply, there exists a need to explore alternative means of identifying and prioritizing suspected cases of COVID-19.
